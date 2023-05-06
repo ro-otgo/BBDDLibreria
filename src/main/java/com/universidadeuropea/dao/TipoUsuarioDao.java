@@ -34,10 +34,4 @@ public class TipoUsuarioDao implements ITipoUsuarioDao {
 		return null;
 	}
 
-	@Override
-	public TipoUsuario updateById(Long objeto) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

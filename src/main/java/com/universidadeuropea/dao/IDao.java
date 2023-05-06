@@ -12,6 +12,4 @@ public interface IDao<T, K> {
 	
 	T update(T objeto);
 	
-	T updateById(K objeto);
-
 }
