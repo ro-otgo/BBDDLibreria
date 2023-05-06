@@ -1,6 +1,6 @@
 package com.universidadeuropea.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class CatalogoLibros {
 	
@@ -10,7 +10,7 @@ public class CatalogoLibros {
 	
 	private String nombreLibro; 
 
-	private Date fechaPublicacion;
+	private LocalDate fechaPublicacion;
 	
 	private int formato;
 
@@ -37,12 +37,12 @@ public class CatalogoLibros {
 	public void setNombreLibro(String nombreLibro) {
 		this.nombreLibro = nombreLibro;
 	}
-
-	public Date getFechaPublicacion() {
+	
+	public LocalDate getFechaPublicacion() {
 		return fechaPublicacion;
 	}
 
-	public void setFechaPublicacion(Date fechaPublicacion) {
+	public void setFechaPublicacion(LocalDate fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
 	}
 
