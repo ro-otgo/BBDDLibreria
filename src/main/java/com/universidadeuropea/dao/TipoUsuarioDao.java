@@ -1,8 +1,9 @@
 package com.universidadeuropea.dao;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.sql.Statement;
 
 import com.universidadeuropea.entities.TipoUsuario;
 
@@ -10,17 +11,17 @@ public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuar
 
 	@Override
 	protected String selectById() {
-		return "select * from tipo_usuario where id=?";
+		return "SELECT * FROM tipo_usuario WHERE id =?";
 	}
 
 	@Override
 	protected String deleteById() {
-		return "delete from tipo_usuario where id =?";
+		return "DELETE FROM tipo_usuario WHERE id =?";
 	}
 	
 	@Override
 	protected String getAllQuery() {
-		return "select * from tipo_usuario";
+		return "SELECT * FROM tipo_usuario";
 	}
 	
 	@Override
@@ -42,21 +43,37 @@ public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuar
 	 */
 	
 	@Override
-	public TipoUsuario save(TipoUsuario objeto) {
-		// TODO Auto-generated method stub
-		return null;
+	public TipoUsuario save(TipoUsuario objeto) throws SQLException {
+		obtenerConexionDB();
+		PreparedStatement ps =getConnection().prepareStatement("INSERT INTO tipo_usuario (rol,descripcion) VALUES(?,?)",  Statement.RETURN_GENERATED_KEYS);
+		ps.setString(1, objeto.getRol());
+		ps.setString(2, objeto.getDescripcion());
+		ps.executeUpdate();
+		ResultSet rs = ps.getGeneratedKeys();
+		long pk =0; 
+		while (rs.next()) {
+			pk = rs.getLong(1);
+		}
+		objeto.setId(pk);
+		cerrarConexion();
+		return objeto;
 	}
 
 	@Override
 	public boolean delete(TipoUsuario objeto) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+		return super.deleteById(objeto.getId());
 	}
 
 	@Override
-	public TipoUsuario update(TipoUsuario objeto) {
-		// TODO Auto-generated method stub
-		return null;
+	public TipoUsuario update(TipoUsuario objeto) throws Exception {
+		obtenerConexionDB();
+		PreparedStatement ps =getConnection().prepareStatement("UPDATE tipo_usuario SET rol =? , descripcion =? WHERE id=?");
+		ps.setString(1, objeto.getRol());
+		ps.setString(2, objeto.getDescripcion());
+		ps.setLong(3, objeto.getId());
+		ps.executeUpdate();
+		cerrarConexion();
+		return objeto;
 	}
 	
 	
