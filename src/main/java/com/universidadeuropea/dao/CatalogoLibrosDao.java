@@ -4,10 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 
 import com.universidadeuropea.entities.CatalogoLibros;
-import com.universidadeuropea.entities.TipoUsuario;
 
 public class CatalogoLibrosDao extends Dao <CatalogoLibros, Long> implements ICatalogoLibrosDao{
 
@@ -33,7 +31,7 @@ public class CatalogoLibrosDao extends Dao <CatalogoLibros, Long> implements ICa
 			catalogoLibros.setId(rs.getLong("id"));
 			catalogoLibros.setIsbn(rs.getString("isbn"));
 			catalogoLibros.setNombreLibro(rs.getString("nombre_libro"));
-			catalogoLibros.setFechaPublicacion(rs.getDate("fecha_publicacion").toLocalDate());
+			catalogoLibros.setFechaPublicacion(FechaUtils.recuperarFecha(rs.getString("fecha_publicacion")));
 			catalogoLibros.setFormato(rs.getInt("formato"));
 		}
 		return catalogoLibros;
@@ -52,7 +50,7 @@ public class CatalogoLibrosDao extends Dao <CatalogoLibros, Long> implements ICa
 		PreparedStatement ps =getConnection().prepareStatement("INSERT INTO catalogo_libros (isbn,nombre_libro,fecha_publicacion,formato) VALUES(?,?,?,?)",  Statement.RETURN_GENERATED_KEYS);
 		ps.setString(1, objeto.getIsbn());
 		ps.setString(2, objeto.getNombreLibro());
-		ps.setDate(3, java.sql.Date.valueOf(objeto.getFechaPublicacion()));
+		ps.setString(3, FechaUtils.convertirFecha(objeto.getFechaPublicacion()));
 		ps.setInt(4, objeto.getFormato());
 		ps.executeUpdate();
 		ResultSet rs = ps.getGeneratedKeys();
@@ -76,9 +74,9 @@ public class CatalogoLibrosDao extends Dao <CatalogoLibros, Long> implements ICa
 		PreparedStatement ps =getConnection().prepareStatement("UPDATE catalogo_libros SET isbn =? , nombre_libro =? , fecha_publicacion =? , formato =? WHERE id=?");
 		ps.setString(1, objeto.getIsbn());
 		ps.setString(2, objeto.getNombreLibro());
-		ps.setDate(3, java.sql.Date.valueOf(objeto.getFechaPublicacion()));
+		ps.setString(3, FechaUtils.convertirFecha(objeto.getFechaPublicacion()));
 		ps.setInt(4, objeto.getFormato());
-		ps.setLong(3, objeto.getId());
+		ps.setLong(5, objeto.getId());
 		ps.executeUpdate();
 		cerrarConexion();
 		return objeto;
