@@ -64,4 +64,10 @@ public class Reserva {
 		this.tipoReserva = tipoReserva;
 	}
 
+	@Override
+	public String toString() {
+		return "Reserva [id=" + id + ", idLibro=" + idLibro + ", idUsuario=" + idUsuario + ", fechaReserva="
+				+ fechaReserva + ", fechaDevolucion=" + fechaDevolucion + ", tipoReserva=" + tipoReserva + "]";
+	}
+
 }

@@ -52,4 +52,10 @@ public class Editorial {
 		this.direccion = direccion;
 	}
 
+	@Override
+	public String toString() {
+		return "Editorial [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", url="
+				+ url + ", direccion=" + direccion + "]";
+	}
+
 }

@@ -22,4 +22,9 @@ public class Editor {
 		this.idLibro = idLibro;
 	}
 
+	@Override
+	public String toString() {
+		return "Editor [idEditorial=" + idEditorial + ", idLibro=" + idLibro + "]";
+	}
+
 }
