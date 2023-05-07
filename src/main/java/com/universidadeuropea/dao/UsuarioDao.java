@@ -98,7 +98,7 @@ public class UsuarioDao extends Dao<Usuario, Long> implements IUsuarioDao {
 		ps.setBoolean(9, objeto.isActivo());
 		ps.setInt(10, objeto.getTipoUsuario());
 		ps.setString(11, objeto.getTelefono());
-		ps.setLong(6, objeto.getId());
+		ps.setLong(12, objeto.getId());
 		ps.executeUpdate();
 		cerrarConexion();
 		return objeto;
