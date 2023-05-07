@@ -32,8 +32,8 @@ public class ReservaDao extends Dao<Reserva, Long> implements IReservaDao {
 			reserva.setId(rs.getLong("id"));
 			reserva.setIdLibro(rs.getLong("id_libro"));
 			reserva.setIdUsuario(rs.getLong("id_usuario"));
-			reserva.setFechaReserva(rs.getTimestamp("fecha_reserva").toLocalDateTime());
-			reserva.setFechaDevolucion(rs.getTimestamp("fecha_devolucion").toLocalDateTime());
+			reserva.setFechaReserva(FechaUtils.recuperarFechaYHora(rs.getString("fecha_reserva")));
+			reserva.setFechaDevolucion(FechaUtils.recuperarFechaYHora(rs.getString("fecha_devolucion")));
 			reserva.setTipoReserva(rs.getLong("tipo_reserva"));
 		}
 		return reserva;
@@ -52,8 +52,8 @@ public class ReservaDao extends Dao<Reserva, Long> implements IReservaDao {
 		PreparedStatement ps =getConnection().prepareStatement("INSERT INTO reserva (id_libro, id_usuario,fecha_reserva,fecha_devolucion,tipo_reserva) VALUES(?,?,?,?,?)",  Statement.RETURN_GENERATED_KEYS);
 		ps.setLong(1, objeto.getIdLibro());
 		ps.setLong(2, objeto.getIdUsuario());
-		ps.setTimestamp(3, Timestamp.valueOf(objeto.getFechaReserva()));
-		ps.setTimestamp(4, Timestamp.valueOf(objeto.getFechaDevolucion()));
+		ps.setString(3, FechaUtils.convertirFecha(objeto.getFechaReserva()));
+		ps.setString(4, FechaUtils.convertirFecha(objeto.getFechaDevolucion()));
 		ps.setLong(5, objeto.getTipoReserva());
 		ps.executeUpdate();
 		ResultSet rs = ps.getGeneratedKeys();
