@@ -2,29 +2,30 @@ package com.universidadeuropea.entities;
 
 public class Escritor {
 
-	private long id_autor;
+	private long idAutor;
 	
-	private long id_libro;
+	private long idLibro;
 
-	public long getId_autor() {
-		return id_autor;
+	public long getIdAutor() {
+		return idAutor;
 	}
 
-	public void setId_autor(long id_autor) {
-		this.id_autor = id_autor;
+	public void setIdAutor(long idAutor) {
+		this.idAutor = idAutor;
 	}
 
-	public long getId_libro() {
-		return id_libro;
+	public long getIdLibro() {
+		return idLibro;
 	}
 
-	public void setId_libro(long id_libro) {
-		this.id_libro = id_libro;
+	public void setIdLibro(long idLibro) {
+		this.idLibro = idLibro;
 	}
 
 	@Override
 	public String toString() {
-		return "Escritor [id_autor=" + id_autor + ", id_libro=" + id_libro + "]";
+		return "Escritor [idAutor=" + idAutor + ", idLibro=" + idLibro + "]";
 	}
+	
 	
 }
