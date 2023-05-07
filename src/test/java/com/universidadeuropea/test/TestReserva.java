@@ -20,7 +20,7 @@ public class TestReserva {
 		
 		String dbURL = "jdbc:sqlite:src/test/resources/libros_test_reserva.db";
 		
-		almacenarReserva(dbURL);
+//		almacenarReserva(dbURL);
 		recuperarReserva(dbURL);
 
 	}
