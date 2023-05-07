@@ -107,7 +107,13 @@ public abstract class Dao<T, K> implements IDao<T, K> {
 	 */
 	
 	protected String getDBUrl() {
-		return null;
+		return DBUrl;
+	}
+	
+	private String DBUrl;
+
+	public void setDBUrl(String dBUrl) {
+		DBUrl = dBUrl;
 	}
 
 	protected void obtenerConexionDB() {
