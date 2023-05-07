@@ -10,20 +10,17 @@ public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuar
 
 	@Override
 	protected String selectById() {
-		// TODO Auto-generated method stub
-		return null;
+		return "select * from tipo_usuario where id=?";
 	}
 
 	@Override
 	protected String deleteById() {
-		// TODO Auto-generated method stub
-		return null;
+		return "delete from tipo_usuario where id =?";
 	}
 	
 	@Override
 	protected String getAllQuery() {
-		// TODO Auto-generated method stub
-		return null;
+		return "select * from tipo_usuario";
 	}
 	
 	@Override
