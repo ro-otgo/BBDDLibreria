@@ -1,37 +1,55 @@
 package com.universidadeuropea.dao;
 
+import java.sql.ResultSet;
+import java.util.List;
+
 import com.universidadeuropea.entities.TipoUsuario;
 
-public class TipoUsuarioDao implements ITipoUsuarioDao {
+public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuarioDao {
 
 	@Override
-	public TipoUsuario save(TipoUsuario objeto) {
+	protected String selectById() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public TipoUsuario read(Long id) {
+	protected String deleteById() {
 		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	protected String getAllQuery() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	protected TipoUsuario mapear(ResultSet rs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	/*-
+	 * =========================================================
+	 * Intefaz 
+	 * ========================================================= 
+	 */
+	
+	@Override
+	public TipoUsuario save(TipoUsuario objeto) {
 		return null;
 	}
 
 	@Override
 	public void delete(TipoUsuario objeto) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public TipoUsuario update(TipoUsuario objeto) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
