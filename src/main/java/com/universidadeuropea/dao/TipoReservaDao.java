@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.universidadeuropea.entities.TipoReserva;
+import com.universidadeuropea.idao.ITipoReservaDao;
 
 public class TipoReservaDao extends Dao<TipoReserva, Long> implements ITipoReservaDao {
 

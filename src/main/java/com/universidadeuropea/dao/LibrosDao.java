@@ -7,6 +7,7 @@ import java.sql.Statement;
 
 
 import com.universidadeuropea.entities.Libros;
+import com.universidadeuropea.idao.ILibrosDao;
 
 public class LibrosDao extends Dao <Libros, Long> implements ILibrosDao{
 

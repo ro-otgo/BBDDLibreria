@@ -4,9 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 
 import com.universidadeuropea.entities.Usuario;
+import com.universidadeuropea.idao.IUsuarioDao;
 
 public class UsuarioDao extends Dao<Usuario, Long> implements IUsuarioDao {
 

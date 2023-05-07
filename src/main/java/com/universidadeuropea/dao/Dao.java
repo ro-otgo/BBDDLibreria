@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.universidadeuropea.idao.IDao;
+
 public abstract class Dao<T, K> implements IDao<T, K> {
 
 

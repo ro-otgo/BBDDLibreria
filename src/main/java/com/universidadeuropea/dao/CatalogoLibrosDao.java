@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.universidadeuropea.entities.CatalogoLibros;
+import com.universidadeuropea.idao.ICatalogoLibrosDao;
 
 public class CatalogoLibrosDao extends Dao <CatalogoLibros, Long> implements ICatalogoLibrosDao{
 

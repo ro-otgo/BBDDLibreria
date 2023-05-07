@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.universidadeuropea.entities.TipoUsuario;
+import com.universidadeuropea.idao.ITipoUsuarioDao;
 
 public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuarioDao {
 

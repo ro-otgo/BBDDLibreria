@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.universidadeuropea.entities.TipoLibros;
+import com.universidadeuropea.idao.ITipoLibrosDao;
 
 public class TipoLibrosDao extends Dao<TipoLibros, Long> implements ITipoLibrosDao{
 

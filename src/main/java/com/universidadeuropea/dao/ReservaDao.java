@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 
 import com.universidadeuropea.entities.Reserva;
+import com.universidadeuropea.idao.IReservaDao;
 
 public class ReservaDao extends Dao<Reserva, Long> implements IReservaDao {
 

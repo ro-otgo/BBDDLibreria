@@ -1,4 +1,4 @@
-package com.universidadeuropea.dao;
+package com.universidadeuropea.idao;
 
 import com.universidadeuropea.entities.Autor;
 

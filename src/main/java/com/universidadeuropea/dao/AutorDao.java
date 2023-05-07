@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.universidadeuropea.entities.Autor;
+import com.universidadeuropea.idao.IAutorDao;
 
 public class AutorDao extends Dao <Autor, Long> implements IAutorDao{
 

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.universidadeuropea.entities.Editor;
+import com.universidadeuropea.idao.IEditorDao;
 
 public class EditorDao extends Dao<Editor, Editor> implements IEditorDao {
 
