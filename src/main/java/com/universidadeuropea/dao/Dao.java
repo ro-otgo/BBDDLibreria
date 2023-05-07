@@ -17,8 +17,9 @@ public abstract class Dao<T, K> implements IDao<T, K> {
 	 * 
 	 * @param rs Resultado de la query
 	 * @return Objeto Java
+	 * @throws SQLException 
 	 */
-	protected abstract T mapear(ResultSet rs);
+	protected abstract T mapear(ResultSet rs) throws SQLException;
 
 	/**
 	 * Query que permite obtener todos los registros de una tabla
