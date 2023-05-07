@@ -26,13 +26,13 @@ public class TipoLibrosDao extends Dao<TipoLibros, Long> implements ITipoLibrosD
 	
 	@Override
 	protected TipoLibros mapear(ResultSet rs) throws SQLException {
-		TipoLibros tipoUsuario = new TipoLibros();
+		TipoLibros tipolibro = new TipoLibros();
 		while(rs.next()) {
-			tipoUsuario.setId(rs.getLong("id"));
-			tipoUsuario.setTipo(rs.getString("tipo"));
-			tipoUsuario.setDescripcion(rs.getString("descripcion"));
+			tipolibro.setId(rs.getLong("id"));
+			tipolibro.setTipo(rs.getString("tipo"));
+			tipolibro.setDescripcion(rs.getString("descripcion"));
 		}
-		return tipoUsuario;
+		return tipolibro;
 	}
 
 	
