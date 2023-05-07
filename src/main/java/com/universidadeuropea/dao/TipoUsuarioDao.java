@@ -1,6 +1,7 @@
 package com.universidadeuropea.dao;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.universidadeuropea.entities.TipoUsuario;
@@ -26,9 +27,14 @@ public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuar
 	}
 	
 	@Override
-	protected TipoUsuario mapear(ResultSet rs) {
-		// TODO Auto-generated method stub
-		return null;
+	protected TipoUsuario mapear(ResultSet rs) throws SQLException {
+		TipoUsuario tipoUsuario = new TipoUsuario();
+		while(rs.next()) {
+			tipoUsuario.setId(rs.getLong("id"));
+			tipoUsuario.setRol(rs.getString("rol"));
+			tipoUsuario.setDescripcion(rs.getString("descripcion"));
+		}
+		return tipoUsuario;
 	}
 
 	
