@@ -30,7 +30,7 @@ public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuar
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	
 	/*-
 	 * =========================================================
@@ -40,16 +40,21 @@ public class TipoUsuarioDao extends Dao<TipoUsuario, Long> implements ITipoUsuar
 	
 	@Override
 	public TipoUsuario save(TipoUsuario objeto) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void delete(TipoUsuario objeto) {
-		
+	public boolean delete(TipoUsuario objeto) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
 	public TipoUsuario update(TipoUsuario objeto) {
+		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
 }
