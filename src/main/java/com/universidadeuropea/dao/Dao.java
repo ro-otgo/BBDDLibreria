@@ -42,7 +42,7 @@ public abstract class Dao<T, K> implements IDao<T, K> {
 	 */
 
 	@Override
-	public List<T> getAll() {
+	public List<T> getAll()  throws Exception {
 		List<T> data = new ArrayList<>();
 		try {
 			obtenerConexionDB();
@@ -52,10 +52,10 @@ public abstract class Dao<T, K> implements IDao<T, K> {
 				data.add(mapear(rs));
 			}
 			cerrarConexion();
-		} catch (SQLException e) {
+			return data;
+		} finally {
 			cerrarConexion();
 		}
-		return data;
 	}
 
 	@Override
