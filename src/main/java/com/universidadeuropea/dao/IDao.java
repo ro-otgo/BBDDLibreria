@@ -14,9 +14,9 @@ import java.util.List;
  */
 public interface IDao<T, K> {
 	
-	T save(T objeto);
+	T save(T objeto) throws Exception;
 	
-	List<T> getAll();
+	List<T> getAll() throws Exception;
 	
 	T getById(K id) throws Exception;
 	
@@ -24,6 +24,6 @@ public interface IDao<T, K> {
 	
 	boolean deleteById(K id) throws Exception;
 	
-	T update(T objeto);
+	T update(T objeto) throws Exception;
 	
 }
